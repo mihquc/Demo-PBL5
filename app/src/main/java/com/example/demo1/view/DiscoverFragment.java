@@ -37,7 +37,7 @@ public class DiscoverFragment extends BaseFragment implements DiscoverContract.V
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         binding = FragmentDiscoverBinding.inflate(getLayoutInflater());
-        presenter = new com.grzeluu.plantcareapp.core.discover.DiscoverPresenter(this);
+        presenter = new com.example.demo1.core.discover.DiscoverPresenter(this);
 
         init();
 
