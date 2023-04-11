@@ -3,7 +3,13 @@ package com.example.demo1.view;
 import static com.example.demo1.utils.Constants.PLANT_INTENT_EXTRAS_KEY;
 import static com.example.demo1.utils.NetworkUtils.isNetworkAvailable;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.View;
+import android.widget.TextView;
+
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
@@ -11,18 +17,20 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.View;
-import android.widget.TextView;
-
 import com.example.demo1.R;
-import com.example.demo1.base.*;
+import com.example.demo1.base.BaseActivity;
+import com.example.demo1.core.main.MainContract;
+import com.example.demo1.core.main.MainPresenter;
 import com.example.demo1.databinding.ActivityMainBinding;
-import com.example.demo1.model.*;
-import com.example.demo1.core.main.*;
+import com.example.demo1.model.Advice;
+import com.example.demo1.model.Plant;
+import com.example.demo1.model.User;
+import com.example.demo1.model.UserPlant;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends BaseActivity implements MainContract.View {
     private AppBarConfiguration mAppBarConfiguration;
@@ -34,6 +42,18 @@ public class MainActivity extends BaseActivity implements MainContract.View {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        List<Advice> adviceList = new ArrayList<>();
+        adviceList.add(new Advice("1","cach tuoi", "phun sương", true));
+        adviceList.add(new Advice("1","cach tuoi", "nhỏ giọt", true));
+
+        Plant plant = new Plant("ớt chuông", "......", "ớt", 7, 30, 6, "https://cdn.tgdd.vn/Products/Images/8785/233908/bhx/ot-chuong-do-tui-300g-202101271558515994.jpg", true, adviceList);
+        UserPlant userPlant = new UserPlant("1", "ớt chuông", 7, 30, 6, "4/9/2023", "4/9/2023", "4/9/2023", "https://cdn.tgdd.vn/Products/Images/8785/233908/bhx/ot-chuong-do-tui-300g-202101271558515994.jpg");
+
+        Gson gson = new Gson();
+        String strJson = gson.toJson(plant);
+        Log.e("string", strJson);
+
 
         init();
     }

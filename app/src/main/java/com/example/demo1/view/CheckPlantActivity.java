@@ -46,8 +46,8 @@ public class CheckPlantActivity extends BaseActivity implements CheckContract.Vi
         setPlantPhoto();
 
         if (plant != null) {
-            binding.tvCommonName.setText(plant.getCommonName());
-            binding.tvLatinName.setText(plant.getLatinName());
+            binding.tvName.setText(plant.getName());
+            binding.tvName1.setText(plant.getName());
             binding.tvCategory.setText(plant.getType());
 
             binding.tvDescription.setText(plant.getDescription());

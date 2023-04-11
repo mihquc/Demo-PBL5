@@ -72,7 +72,7 @@ public class AddPlantFragment extends BaseFragment implements AddContract.View {
     }
 
     private void initPlantData(Plant plant) {
-        binding.etName.setText(plant.getCommonName());
+        binding.etName.setText(plant.getName());
 
         binding.fertilizingSettings.sbFrequency.setProgress(daysToProgress(plant.getFertilizingFrequency()));
         binding.wateringSettings.sbFrequency.setProgress(daysToProgress(plant.getWateringFrequency()));

@@ -6,8 +6,7 @@ import java.util.List;
 public class Plant implements Serializable {
     String id;
 
-    String commonName;
-    String latinName;
+    String Name;
     String description;
     String type;
 
@@ -35,8 +34,7 @@ public class Plant implements Serializable {
         this.advicesList = advicesList;
     }
 
-    public Plant(String commonName,
-                 String latinName,
+    public Plant(String name,
                  String description,
                  String type,
                  int wateringFrequency,
@@ -45,8 +43,7 @@ public class Plant implements Serializable {
                  String photoUri,
                  boolean isVerified,
                  List<Advice> advices) {
-        this.commonName = commonName;
-        this.latinName = latinName;
+        this.Name = name;
         this.type = type;
         this.description = description;
         this.wateringFrequency = wateringFrequency;
@@ -65,20 +62,12 @@ public class Plant implements Serializable {
         this.id = id;
     }
 
-    public String getCommonName() {
-        return commonName;
+    public String getName() {
+        return Name;
     }
 
-    public void setCommonName(String commonName) {
-        this.commonName = commonName;
-    }
-
-    public String getLatinName() {
-        return latinName;
-    }
-
-    public void setLatinName(String latinName) {
-        this.latinName = latinName;
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
     public String getDescription() {

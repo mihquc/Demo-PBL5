@@ -45,8 +45,8 @@ public class DiscoverAdapter extends RecyclerView.Adapter<DiscoverAdapter.ViewHo
                 .load(FIREBASE_IMAGE_REFERENCE.child(plant.getId()))
                 .into(holder.binding.ivPlantPhoto);
 
-        holder.binding.tvCommonName.setText(plant.getCommonName());
-        holder.binding.tvLatinName.setText(plant.getLatinName());
+        holder.binding.tvName.setText(plant.getName());
+        holder.binding.tvName1.setText(plant.getName());
         if (!plant.isVerified()) holder.binding.ivVerified.setVisibility(View.GONE);
 
         holder.binding.ivMore.setOnClickListener(v -> goToCheckPlant(plant));

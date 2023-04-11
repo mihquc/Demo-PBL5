@@ -74,7 +74,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_latin_name" />
 
             <TextView
-                android:id="@+id/tv_common_name"
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
@@ -87,7 +87,7 @@
                 app:layout_constraintTop_toTopOf="@+id/cardView" />
 
             <TextView
-                android:id="@+id/tv_latin_name"
+                android:id="@+id/tv_name1"
                 style="@style/common_text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
