@@ -43,18 +43,6 @@ public class MainActivity extends BaseActivity implements MainContract.View {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        List<Advice> adviceList = new ArrayList<>();
-        adviceList.add(new Advice("1","cach tuoi", "phun sương", true));
-        adviceList.add(new Advice("1","cach tuoi", "nhỏ giọt", true));
-
-        Plant plant = new Plant("ớt chuông", "......", "ớt", 7, 30, 6, "https://cdn.tgdd.vn/Products/Images/8785/233908/bhx/ot-chuong-do-tui-300g-202101271558515994.jpg", true, adviceList);
-        UserPlant userPlant = new UserPlant("1", "ớt chuông", 7, 30, 6, "4/9/2023", "4/9/2023", "4/9/2023", "https://cdn.tgdd.vn/Products/Images/8785/233908/bhx/ot-chuong-do-tui-300g-202101271558515994.jpg");
-
-        Gson gson = new Gson();
-        String strJson = gson.toJson(plant);
-        Log.e("string", strJson);
-
-
         init();
     }
     @Override
@@ -166,7 +154,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
 
     private void openAddPlant() {
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new AddPlantFragment())
+                .replace(R.id.container1, new AddPlantFragment())
                 .commit();
     }
 
@@ -178,13 +166,13 @@ public class MainActivity extends BaseActivity implements MainContract.View {
         fragment.setArguments(bundle);
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, fragment)
+                .replace(R.id.container1, fragment)
                 .commit();
     }
 
     private void openDiscover() {
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, new DiscoverFragment())
+                .replace(R.id.container2, new DiscoverFragment())
                 .commit();
     }
 

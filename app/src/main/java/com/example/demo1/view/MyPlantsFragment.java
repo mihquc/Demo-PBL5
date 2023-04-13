@@ -29,6 +29,7 @@ public class MyPlantsFragment extends BaseFragment implements MyPlantsContract.V
     FragmentMyPlantsBinding binding;
     com.example.demo1.core.myplants.MyPlantsPresenter presenter;
     private LinearLayoutManager plantsLayoutManager;
+    private ArrayList<UserPlant> UserPlantList;
     private MyPlantsAdapter myPlantsAdapter;
     private RecyclerView recyclerView;
 
@@ -68,6 +69,8 @@ public class MyPlantsFragment extends BaseFragment implements MyPlantsContract.V
     private void initAdapters() {
         plantsLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(plantsLayoutManager);
+
+        UserPlantList = new ArrayList<>();
 
         myPlantsAdapter = new MyPlantsAdapter(getContext(), presenter, new ArrayList<UserPlant>());
         recyclerView.setAdapter(myPlantsAdapter);
